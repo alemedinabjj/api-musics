@@ -1,0 +1,25 @@
+
+
+# @name get-videos
+GET http://localhost:4444/musics
+
+
+###
+
+# @name get-videos
+DELETE http://localhost:4444/musics/7f5ee4a5-f820-4b72-864c-4065176e84d5
+
+
+###
+
+# @name create-transcription-route
+POST http://localhost:4444/musics
+Content-Type: application/json
+
+{
+  "title": "Homenagem aos Reliquias",
+  "artist": "Mc Tafarel",
+  "year": 2023,
+  "code": 32231,
+  "userId": "2f70289a-45c0-41ee-90ad-387774e8fb0b"
+}
