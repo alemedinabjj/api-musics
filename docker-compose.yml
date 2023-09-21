@@ -6,4 +6,4 @@ services:
     ports:
       - "3332:3332"
     environment:
-      DATABASE_URL: "postgres://alemedinabjj:iLUsYGuD9d4N@ep-sparkling-mud-03643572.us-east-2.aws.neon.tech/neondb"
+      DATABASE_URL: ${DATABASE_URL}

@@ -18,8 +18,6 @@ COPY . .
 # Instalando o Prisma globalmente
 RUN npm install -g prisma
 
-# Defina variáveis de ambiente, se necessário
-ENV DATABASE_URL "postgres://alemedinabjj:iLUsYGuD9d4N@ep-sparkling-mud-03643572.us-east-2.aws.neon.tech/neondb"
 
 # Executando a configuração do Prisma (substitua comandos e caminhos reais conforme necessário)
 # Certifique-se de que o comando prisma generate e prisma migrate deploy seja executado com base em sua necessidade e configuração.
