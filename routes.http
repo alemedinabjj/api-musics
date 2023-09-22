@@ -1,17 +1,17 @@
 
-# @name get-videos
+# @name get
 GET https://api-musics-mpol.onrender.com/musics
 
 
 ###
 
-# @name get-videos
+# @name delete
 DELETE https://api-musics-mpol.onrender.com/musics/7f5ee4a5-f820-4b72-864c-4065176e84d5
 
 
 ###
 
-# @name create-transcription-route
+# @name create
 POST http://localhost:3332/musics
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjJmNzAyODlhLTQ1YzAtNDFlZS05MGFkLTM4Nzc3NGU4ZmIwYiIsImlhdCI6MTY5NTM4NTYxNywiZXhwIjoxNjk1NDcyMDE3fQ.5CL0n3x-RAwEmzalhSwbvOU7mnt9XLdevf0oMPLyIMk
@@ -26,7 +26,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjJmNzAyODlhL
 
 ###
 
-# @name create-transcription-route
+# @name update
 PUT https://api-musics-mpol.onrender.com/musics/a7721030-27b3-4ae4-abf4-7a59cd185f4d
 Content-Type: application/json
 
