@@ -1,4 +1,5 @@
 import * as musicController from '../controller/musics.js'
+import { verifyToken } from '../middlewares/verifyToken.js'
 
 export const routes = [
   {
@@ -15,6 +16,7 @@ export const routes = [
     method: 'POST',
     url: '/musics',
     handler: musicController.createMusic,
+    preHandler: verifyToken,
   },
   {
     method: 'PUT',

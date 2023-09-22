@@ -1,10 +1,16 @@
 import { fastify } from 'fastify'
 import { routes } from './routes/musics.js'
+import { routes as userRoutes } from './routes/users.js'
+import cors from '@fastify/cors'
 
 const app = fastify()
+app.register(cors)
+
 const port = process.env.PORT ?? 3332
 
-routes.forEach((route) => {
+const allRoutes = [...routes, ...userRoutes]
+
+allRoutes.forEach((route) => {
   app.route(route)
 })
 
