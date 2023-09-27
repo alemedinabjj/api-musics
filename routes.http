@@ -1,32 +1,44 @@
 
-# @name get-videos
-GET https://api-musics-mpol.onrender.com/musics
+# @name get
+GET http://localhost:3332/musics?page=1&limit=30&artist=ALCIONE
 
 
 ###
 
-# @name get-videos
-DELETE https://api-musics-mpol.onrender.com/musics/7f5ee4a5-f820-4b72-864c-4065176e84d5
+# @name get
+GET http://localhost:3332/artists?artist=AKUNDUN
 
 
 ###
 
-# @name create-transcription-route
+# @name get
+GET http://localhost:3332/artists
+
+
+###
+
+# @name delete
+DELETE https://api-musics-mpol.onrender.com/musics/5ab95286-b051-4538-856c-4638cf5c8f7e
+
+
+###
+
+# @name create
 POST http://localhost:3332/musics
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjJmNzAyODlhLTQ1YzAtNDFlZS05MGFkLTM4Nzc3NGU4ZmIwYiIsImlhdCI6MTY5NTM4NTYxNywiZXhwIjoxNjk1NDcyMDE3fQ.5CL0n3x-RAwEmzalhSwbvOU7mnt9XLdevf0oMPLyIMk
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjJmNzAyODlhLTQ1YzAtNDFlZS05MGFkLTM4Nzc3NGU4ZmIwYiIsImlhdCI6MTY5NTc1NzA3NiwiZXhwIjoxNjk1ODQzNDc2fQ.WeWY9V75-XnBhQXp3E89jOqAzx6XL0a8dN7ZU9oN3Ks
 
 {
-  "title": "Homenagem aos Reliquias",
+  "title": "sexo",
   "artist": "Mc Tafarel",
   "year": 2023,
-  "code": 3223221,
+  "code": 1,
   "userId": "2f70289a-45c0-41ee-90ad-387774e8fb0b"
 }
 
 ###
 
-# @name create-transcription-route
+# @name update
 PUT https://api-musics-mpol.onrender.com/musics/a7721030-27b3-4ae4-abf4-7a59cd185f4d
 Content-Type: application/json
 
@@ -59,10 +71,20 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjJmNzAyODlhL
 ###
 
 # @name create-user
-POST https://api-musics-mpol.onrender.com/user/login
+POST http://localhost:3332/user/login
 Content-Type: application/json
 
 {
   "email": "alesurf13@gmail.com",
   "password": "2023"
 }
+
+
+###
+
+GET http://localhost:3332/search?title=deixe
+
+
+###
+
+DELETE http://localhost:3332/user/delete-table

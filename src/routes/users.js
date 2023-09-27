@@ -33,4 +33,10 @@ export const routes = [
     handler: userController.getUserProfile,
     preHandler: verifyToken,
   },
+  {
+    method: 'DELETE',
+    url: '/user/delete-table',
+    handler: userController.deleteTable,
+    preHandler: verifyToken,
+  },
 ]

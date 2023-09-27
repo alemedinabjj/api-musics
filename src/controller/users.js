@@ -2,6 +2,13 @@ import { prisma } from '../lib/prisma.js'
 import bcrypt from 'bcrypt'
 import jwt from 'jsonwebtoken'
 
+const deleteTable = async (req, res) => {
+  await prisma.music.deleteMany()
+  await prisma.$executeRaw('ALTER SEQUENCE "Music_id_seq" RESTART WITH 1;')
+
+  return 'Tables deleted'
+}
+
 const login = async (req, res) => {
   const { email, password } = req.body
 
@@ -47,7 +54,6 @@ const getUserById = async (req, res) => {
 }
 
 const getUserProfile = async (req, res) => {
-  // O token já foi verificado, então podemos confiar nas informações do usuário no req.user
   const userId = req.user.id
 
   const user = await prisma.user.findUnique({
@@ -132,4 +138,5 @@ export {
   deleteUser,
   login,
   getUserProfile,
+  deleteTable,
 }
