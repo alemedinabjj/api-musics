@@ -6,7 +6,6 @@ import {
   deleteMusic,
   searchMusics,
   getAllArtists,
-  filterByArtist,
 } from '../controller/musics.js'
 import { verifyToken } from '../middlewares/verifyToken.js'
 

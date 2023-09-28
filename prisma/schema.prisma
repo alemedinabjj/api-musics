@@ -27,6 +27,7 @@ model Music {
   year      Int
   code      Int
   userId    String
+  cartridge Int      @default(0)
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   user      User     @relation(fields: [userId], references: [id])

@@ -44,6 +44,7 @@ const getAllMusics = async (req, res) => {
         artist: true,
         year: true,
         code: true,
+        cartridge: true,
       },
       skip: (page - 1) * limit,
       take: parseInt(limit),
@@ -85,6 +86,7 @@ const searchMusics = async (req, res) => {
           artist: true,
           year: true,
           code: true,
+          cartridge: true,
         },
       })
 
@@ -142,6 +144,7 @@ const getMusicById = async (req, res) => {
       artist: true,
       year: true,
       code: true,
+      cartridge: true,
     },
   })
 
@@ -149,7 +152,7 @@ const getMusicById = async (req, res) => {
 }
 
 const createMusic = async (req, res) => {
-  const { title, artist, year, code, userId } = req.body
+  const { title, artist, year, code, userId, cartridge } = req.body
 
   prisma.music
     .findFirst({
@@ -167,6 +170,7 @@ const createMusic = async (req, res) => {
               year,
               code,
               userId,
+              cartridge,
             },
           })
           .then((music) => {
@@ -180,7 +184,7 @@ const createMusic = async (req, res) => {
 
 const updateMusic = async (req, res) => {
   const { id } = req.params
-  const { title, artist, year, code } = req.body
+  const { title, artist, year, code, cartridge } = req.body
 
   if (!id) {
     throw new Error('Music ID is required')
@@ -195,6 +199,7 @@ const updateMusic = async (req, res) => {
       artist,
       year,
       code,
+      cartridge,
     },
   })
 
