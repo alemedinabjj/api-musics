@@ -47,7 +47,22 @@ GET https://ec2-13-59-145-7.us-east-2.compute.amazonaws.com/api/musics?page=1&li
 GET https://api-musics-mpol.onrender.com/musics?page=10&limit=30
 GET https://ec2-13-59-145-7.us-east-2.compute.amazonaws.com/api/search?title=amor&artist=JOANA
 
-### RESPONSE
+## Implantação na AWS
+
+Para a implantação da API na AWS, foram utilizadas tecnologias como Docker e Nginx com um servidor proxy reverso para garantir escalabilidade e alta disponibilidade.
+
+- **Docker:** A API foi empacotada em contêineres Docker, o que tornou a implantação mais consistente e fácil de gerenciar. Os contêineres Docker permitem empacotar a aplicação e todas as suas dependências em uma unidade isolada, garantindo que ela funcione consistentemente em diferentes ambientes.
+
+- **Nginx com Proxy Reverso:** Nginx foi configurado como um servidor web de alto desempenho com um servidor proxy reverso integrado. O servidor proxy reverso foi usado para gerenciar o tráfego de entrada e direcioná-lo para os contêineres Docker que hospedam a API. Isso permite a distribuição de carga e a manutenção da disponibilidade da API, mesmo durante picos de tráfego.
+
+## Implantação no Render
+
+No ambiente de implantação do Render, a API foi implantada usando imagens Docker pré-configuradas para simplificar o processo de implantação e gerenciamento.
+
+- **Docker Image Deployment:** No Render, a API foi implantada utilizando imagens Docker previamente configuradas. Isso facilitou a implantação da API no ambiente Render, garantindo que a aplicação fosse executada de maneira consistente e escalável.
+
+Essas tecnologias foram escolhidas para garantir que a API de músicas para karaoke seja confiável, escalável e de alto desempenho em ambas as implantações na AWS e no Render.
+
 
 
 ## Paginação
