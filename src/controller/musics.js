@@ -37,6 +37,14 @@ const getAllMusics = async (req, res) => {
     }
 
     const musics = await prisma.music.findMany({
+      // traz tudo menos userId
+      select: {
+        id: true,
+        title: true,
+        artist: true,
+        year: true,
+        code: true,
+      },
       skip: (page - 1) * limit,
       take: parseInt(limit),
     })
@@ -172,7 +180,7 @@ const createMusic = async (req, res) => {
 
 const updateMusic = async (req, res) => {
   const { id } = req.params
-  const { title, artist, year, code, userId } = req.body
+  const { title, artist, year, code } = req.body
 
   if (!id) {
     throw new Error('Music ID is required')
